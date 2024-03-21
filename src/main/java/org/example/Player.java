@@ -14,11 +14,12 @@ public class Player {
         return healthPercentage;
     }
     public void loseHealth(int damage){
-        if(healthPercentage > 0 ) {
-            healthPercentage -= damage;
-        } else {
+        healthPercentage -= damage;
+        if(healthPercentage <= 0) {
             System.out.println(this.name + " player has been knocked out of game");
+            healthPercentage = 0;
         }
+
     }
     public void restoreHealth(int healthPotion){
         healthPercentage += healthPotion;
